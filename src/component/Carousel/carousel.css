@@ -1,0 +1,176 @@
+.carousel-container{
+    position:relative;
+    display: flex;
+    width: 610px;
+    height:430px;
+    /* border: 2px solid Grey;  */
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.image-container{
+    /* position:absolute; */
+    display: flex;
+    width: 500px;;
+    /* border: 2px solid Grey;   */
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.carousal-image{
+    /* margin: 5px; */
+ width: 500px;
+ height: 300px;
+ object-fit: cover;
+ flex-shrink:0;
+}
+
+.arrow{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; */
+
+}
+
+.carsouel-left-arrow{
+   
+    top: 50%;
+    left:0%;
+    transform: translate(calc(-50% + 25px), -50%);
+  
+
+}
+
+.carsouel-right-arrow{
+
+    top: 50%;
+    right:0%;
+    transform: translate(calc(-50% + 25px), -50%);
+   
+
+}
+
+.arrow:hover{
+    background-color: rgb(255, 183, 0);
+    cursor: pointer;
+}
+
+
+
+.cross-button{
+    position: absolute;
+    height: 40px;
+    width: 90px;
+    font-size: 32px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom :0%;
+    left:6%;
+    transform: translate(calc(-50% + 25px), -50%);
+    font-size: 20px;
+    color : red
+}
+
+
+.cross-button:hover{
+    background-color: rgba(255, 0, 0, 0.534);
+
+    color :white
+}
+
+.save-button{
+    /* border: 1px solid rgb(0, 255, 17); */
+    width: 100px;
+    height: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: absolute;
+    /* height: 40px;
+    width: 40px; */
+    font-size: 32px;
+    border: 2px solid rgb(0, 0, 0);
+    /* border-radius: 50px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0%;
+    right:0%;
+    transform: translate(calc(-50% + 25px), -50%);
+    font-size: 20px;
+    color: rgb(0, 255, 17);
+
+}
+
+.save-button:hover{
+    background-color:  rgb(0, 255, 17);
+    color: white;
+}
+
+.carousel-circle-container{
+width: 100%;
+    display: flex;
+    position: absolute;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0%;
+    /* left: 50% */
+
+} 
+
+/* .default-image-outer{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.default-image{
+    width: 10px;
+    height: 20px;
+} */
+
+.carousel-circle{
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 187, 0, 0.763);
+    border-radius: 50px;
+    margin: 3px;
+
+  
+
+}
+
+.carousel-circle:hover{
+    background-color: rgb(255, 187, 0);
+}
+
+.carousel-circle-active:hover{
+    background-color: rgb(255, 187, 0);
+}
+
+.carousal-image-width-100{
+    width:100%
+    
+}
+
+.carsoual-image-width-90{
+
+    width:90%
+
+}

@@ -1,0 +1,34 @@
+
+.modal-div{
+    padding: 10px;
+    background-color: rgb(255, 183, 0);
+    /* width:500px;
+    height: 500px; */
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate( -50%, -50%);
+   }
+  
+  .button-div{
+    display: flex;
+    
+    justify-content: right;
+    /* background-color: aliceblue; */  
+  }
+  
+  .modal-close{
+    background-color: red;
+  }
+  
+  
+  .file-upload-model-div{
+    position: absolute;
+    top: 50%;
+    left : 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    width: 100vw;
+    transform: translate(-50%, -50%);
+  
+  }
