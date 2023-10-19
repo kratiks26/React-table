@@ -7,8 +7,8 @@ import Pagination from "../Pagination/pagianation";
 
 const Table = () => {
   const [tableState, setTableState] = useState({
-    columns: [], // {columnName: '', columnComponentType: ''}
-    rows: [] // { cells: [] }
+    columns: [],
+    rows: []
   });
 
   const pageSize = 5;
@@ -17,8 +17,6 @@ const Table = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [showAddRowAlert, setShowAddRowAlert] = useState(false);
-  // const [modalOpen, setModalOpen, ModalComponent] = useModal()
-  // const [columnName, setColumnName] = useState("");
   const [addColumnFormState, setAddColumnFormState] = useState({
     columnName: "",
     columnComponentType: ""
@@ -57,7 +55,9 @@ const Table = () => {
 
   useEffect(() => {
     setDataInState(apiData);
-  }, []);
+    // eslint-disable-next-line
+  },[]);
+
   const resetColumnForm = () => {
     setAddColumnFormState({
       columnName: "",
@@ -67,13 +67,11 @@ const Table = () => {
 
   const addColumnPrompt = () => setModalOpen(true);
   const handleAddColumn = (columnName) => {
-    // const columnName = prompt('Add column Name');
     const newTable = { ...tableState };
     newTable.columns.push({
       columnComponentType: addColumnFormState.columnComponentType,
       columnName: columnName ?? `Col_${newTable.columns.length + 1}`
     });
-    //  adding cells for columns
     newTable.rows.forEach((rowObj, rowIdx) =>
       rowObj.cells.push({
         cellValue: `Cell_${rowIdx}_${newTable.columns.length}`
@@ -109,12 +107,10 @@ const Table = () => {
     setShowAddRowAlert
   };
 
-  // console.log({ addColumnFormState });
   return (
     <div>
       <button onClick={addColumnPrompt}>Add Column</button>
       <button onClick={handleAddRow}>Add Row</button>
-      {/* <button onClick={() => setModalOpen(true)}>Open Modal</button> */}
       {modalOpen && <AddColumnModal {...addColumnModalProps} />}
       {showAddRowAlert && <AddRowAlert {...addRowAlertProps} />}
 
@@ -145,7 +141,6 @@ const Table = () => {
                   return (
                     <td>
                       <ComponentType
-                        // type={ComponentType}
                         onChange={(e) => {
                           const newTable = { ...tableState };
                           newTable.rows[rowIdx].cells[colIdx].cellValue =
@@ -185,7 +180,7 @@ const ModalComponent = (props) => {
         type="button"
         onClick={() => setModalOpen(false)}
       >
-        Close
+        close
       </button>
       {children}
     </div>,
@@ -294,11 +289,5 @@ const FileUploadModal =() =>{
     </>
   )
 }
-
-// const [modalOpen, setModalOpen, ModalComponent] = useModal(AddColumnModal);
-// const useModal = (AddColumnModal) => {
-//   const [modalOpen, setModalOpen] = useState(false);
-//   return [modalOpen, setModalOpen, AddColumnModal];
-// };
 
 export default Table;
