@@ -69,15 +69,17 @@ export const Carousel = ({
             </div>
             {imageList.length > 0 && (
               <>
-                <div
-                  className="arrow carsouel-left-arrow"
-                  onClick={scrollToLeft}
-                ></div>
-                <div
+              {
+                page === 0 ? "" : <div
+                className="arrow carsouel-left-arrow"
+                onClick={scrollToLeft}
+              ></div>
+              }
+              {  page === imageList.length -1 ? "" :   <div
                   className="arrow carsouel-right-arrow"
                   onClick={scrollToRight}
                 ></div>
-
+              }
                 <div className="cross-button" onClick={handleOnDelete}>
                   Delete
                 </div>
